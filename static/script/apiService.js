@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://localhost:5050/api';
+const API_BASE_URL = window.location.hostname === 'localhost' 
+    ? 'http://localhost:5050/api'
+    : `${window.location.protocol}//${window.location.host}/api`;
 
 class APIService {
     constructor() {
@@ -18,8 +20,6 @@ class APIService {
         const config = { ...defaultOptions, ...options };
 
         try {
-            console.log(`Fazendo requisição para: ${url}`, config);
-            
             const response = await fetch(url, config);
 
             if (!response.ok) {
@@ -28,10 +28,8 @@ class APIService {
             }
 
             const data = await response.json();
-            console.log('Resposta recebida:', data);
-            
-            return data;
 
+            return data;
         } catch (error) {
             console.error(`Erro na requisição para ${endpoint}:`, error);
             throw error;
