@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutriva - Preferências</title>
+    <link rel="shortcut icon" href="../static/assets/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body id="body-preferences">
+    <div class="preferences-container">
+        <div class="preferences-card">
+            <div class="preferences-header">
+                <div class="icon-circle">
+                    <span class="emoji">🍽️</span>
+                </div>
+                <h1 class="preferences-title">Personalize suas Receitas</h1>
+                <p class="preferences-subtitle">
+                    Conte-nos sobre suas preferências alimentares para recomendarmos as melhores receitas
+                </p>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <form id="preferencesForm">
+                <!-- Tipo de Dieta -->
+                <div class="section">
+                    <h2 class="section-title">Tipo de Dieta</h2>
+                    <div class="diet-grid" id="dietGrid">
+                        <!-- Preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Intolerâncias -->
+                <div class="section">
+                    <h2 class="section-title">Intolerâncias Alimentares</h2>
+                    <p class="section-subtitle">
+                        Selecione todas que se aplicam (opcional)
+                    </p>
+                    <div class="intolerances-grid" id="intolerancesGrid">
+                        <!-- Preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <button type="submit" class="continue-btn" id="continueBtn" disabled>
+                    Continuar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="../static/script/database.js"></script>
+    <script type="module" src="../static/script/preferences.js"></script>
+</body>
+</html>

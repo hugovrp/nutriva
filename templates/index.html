@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutriva - Planejador de Receitas</title>
+    <link rel="shortcut icon" href="../static/assets/fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body id="body-index">
+    <div class="main-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <span class="logo-emoji">👨‍🍳</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="logo-title">Nutriva - Planejador de Receitas</h1>
+                        <p class="logo-subtitle">Encontre receitas com seus ingredientes</p>
+                    </div>
+                </div>
+                <button id="logoutBtn" class="logout-btn">
+                    <span class="logout-icon">⍈</span>
+                    Sair
+                </button>
+            </div>
+        </header>
+
+        <div class="filters-card">
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label class="filter-label">Tipo de Refeição</label>
+                    <select id="mealTypeSelect" class="filter-select">
+                        <option value="">Selecione...</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Ingredientes</label>
+                    <div class="ingredient-input-group">
+                        <input type="text" id="ingredientInput" class="filter-input" placeholder="Ex: tomate, frango..."/>
+                        <button id="addIngredientBtn" class="add-btn">
+                            <span class="add-icon">✚</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ingredientTags" class="ingredient-tags" style="display: none;"></div>
+
+            <button id="searchBtn" class="search-btn" disabled>
+                <span class="search-icon">🔍︎</span>
+                Buscar Receitas
+            </button>
+        </div>
+
+        <div id="recipesSection" style="display: none;">
+            <h2 class="recipes-title">
+                Receitas Encontradas (<span id="recipesCount">0</span>)
+            </h2>
+            <div id="recipesGrid" class="recipes-grid">
+            </div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">🍳</div>
+            <h3 class="empty-title">Nenhuma receita ainda</h3>
+            <p class="empty-text">
+                Selecione o tipo de refeição e adicione ingredientes para começar
+            </p>
+        </div>
+
+        <div id="loadingState" class="loading-state" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Buscando receitas deliciosas...</p>
+        </div>
+    </div>
+
+    <script type="module" src="../static/script/database.js"></script>
+    <script type="module" src="../static/script/routeGuard.js"></script>
+    <script type="module" src="../static/script/index.js"></script>
+</body>
+</html>
